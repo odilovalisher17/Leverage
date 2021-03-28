@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Leverage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* utility classes */
+        .text-color1{
+            color:rgb(255, 72, 0);
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+        .text-color2{
+            color:#777171;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+        .text-color3{
+            color: white;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+        .btn{
+            padding: 10px 20px;
+            background:transparent;
+            color: white;
+            border:solid 3px rgb(255, 72, 0);
+            outline: none;
+        }
+        .head{
+            color: white;
+            font-size: 50px;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            padding-bottom: 20px;
+        }
+
+        /* Navbar */
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 200px;
+            background: #040402;
+            color: white;
+        }
+        .nav ul{
+            display: flex;
+            align-items: center;
+        }
+        .nav ul li{
+            padding:0 25px;
+            font-size: 20px;
+        }
+        .nav ul li a{
+            color: white;
+        }
+        .nav ul button:hover{
+            background:rgb(255, 72, 0);
+        }
+        .logo{
+            font-size: 30px;
+        }
+        .logo a{
+            color: white;
+        }
+        .logo span{
+            font-size: 16px;
+            color: rgb(255, 72, 0);
+        }
+
+        /* Images */
+        .images{
+            background:#040402;
+            padding: 35px 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .img-left {
+            font-size: 55px;
+        }
+        .img-left p{
+            font-size: 20px;
+            color:#777171;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            padding-bottom:10px;
+        }
+        .img-left h1{
+            padding-bottom: 30px;
+            font-weight: 999px;
+        }
+        .img-right img{
+            height: 600px;
+            width: 450px;
+        }
+
+        /* About */
+        .about{
+            padding: 40px 200px;
+            background: rgb(34, 34, 34);
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .about-left h1{
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
+        .about-left p{
+            padding-bottom: 70px;
+        }
+        .about-left{
+            width: 400px;
+        }
+        .about-text1{
+            display: flex;
+        }
+        .about-text1 i{
+            font-size: 35px;
+            padding-right: 25px;
+            position: relative;
+            top: 15px;
+            color: rgb(255, 72, 0);
+        }
+        .about-text2{
+            display: flex;
+        }
+        .about-text2 i{
+            font-size: 35px;
+            padding-right: 25px;
+            position: relative;
+            top: 15px;
+            color: rgb(255, 72, 0);
+        }
+        .about-right img{
+            height: 550px;
+            width: 550px;
+        }
+
+        /* Institutional */
+        .ins{
+            height: 100vh;
+            background: rgb(51, 50, 50);
+            padding: 40px 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ins-header h2{
+            font-size: 50px;
+            padding-bottom: 20px;
+        }
+        .ins-header p{
+            padding-bottom: 70px;
+        }
+        .ins-text1{
+            display: flex;
+            padding-bottom: 50px;
+            padding-right: 90px;
+        }
+        .ins-text1 i{
+            font-size: 35px;
+            padding-right: 25px;
+            position: relative;
+            top: 15px;
+            color: rgb(255, 72, 0);
+        }
+        .ins-text2{
+            display: flex;
+            padding-right: 90px;
+        }
+        .ins-text2 i{
+            font-size: 35px;
+            padding-right: 25px;
+            position: relative;
+            top: 15px;
+            color: rgb(255, 72, 0);
+        }
+        .ins-left img{
+            height: 550px;
+            width: 550px;
+            margin-right: 90px;
+        }
+
+        /* Facts */
+        .facts{
+            height: 80vh;
+            background:#040402;
+            padding: 35px 200px;
+            display: grid;
+            align-items: center;
+        }
+        .facts-header{
+            text-align: center;
+            padding: 0 200px;
+        }
+        .facts-header h1{
+            font-size: 50px;
+            padding-bottom:30px;
+        }
+        .fact{
+            display: flex;
+            justify-content: center;
+        }
+        .factss{
+            padding: 0 35px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        /* Services */
+        .services{
+            height: 100vh;
+            background: rgb(34, 34, 34);
+            padding: 40px 200px;
+        }
+        .services-header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ser-right button{
+            background:  rgb(255, 72, 0);
+            padding: 10px 20px;
+            color: white;
+            border:solid 3px rgb(255, 72, 0);
+            outline: none;
+            border-radius: 5px;
+        }
+        .ser1{
+            width: 300px;
+            text-align: center;
+            background:rgb(51, 50, 50);
+            padding: 30px 40px;
+            margin-top: 20px;
+        }
+        .service{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">
+            Leverage <span>2.0</span>
+        </a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                   <a href="#"> Home</a>
+                </li>
+                <li>
+                    <a href="#"> Pages</a>
+                </li>
+                <li>
+                    <a href="#"> Blog</a>
+                </li>
+                <li>
+                    <a href="#"> Extra</a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fas fa-search"></i> </a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fab fa-twitter"></i> </a>
+                </li>
+                <li>
+                    <a href="#"> <i class="fab fa-instagram"></i> </a>
+                </li>
+                <button class="btn">
+                    <i class="fas fa-rocket"></i>BUY NOW
+                </button>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Images -->
+    <div class="images">
+        <div class="img-left">
+            <h1 class="text-color1">
+                Boost your <br> Creativity.
+            </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam <br> molestias minus molestiae voluptatem autem nisi.</p>
+            <button class="btn">
+                <i class="fas fa-coffee"></i> GET STARTED
+            </button>
+        </div>
+
+        <div class="img-right">
+            <img src="./images/hero-5.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- About -->
+    <div class="about">
+        <div class="about-left">
+            <div class="about-header">
+            <h1 class="text-color3">
+                About Us
+            </h1>
+            <p class="text-color2">For over 8 years we have been developing digital solutions for companies looking to gain better visibility on the internet.</p>
+            </div>
+            <div class="about-text1">
+                <i class="fas fa-award"></i>
+                <div>
+                    <h2 class="text-color3">Quality</h2> <br>
+                <p class="text-color2">Everything we do has the commitment of a well trained and motivated team.</p>
+                </div>
+            </div>
+            <div class="about-text2">
+                <i class=" fas fa-briefcase"></i>
+                <div>
+                <h2 class="text-color3">Experience</h2> <br>
+                <p class="text-color2">Focused on results we seek to raise the level of our customers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-right">
+            <img src="./images/about-4.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Institutional -->
+    <div class="ins">
+        <div class="ins-left">
+            <a href="#">
+            <img src="https://leverage.codings.dev/assets/images/about-5.jpg" alt=""> </a>
+        </div>
+
+        <div class="ins-right">
+            <div class="ins-header">
+                <h2 class="text-color3">Institutional</h2>
+                <p class="text-color2">Get to know a little of our history and the road we traveled that took us to the level we are today.</p>
+            </div>
+            <div class="ins-text1">
+                <i class="fas fa-trophy"></i>
+                <div>
+                    <h2 class="text-color3">Tradition</h2> <br>
+                <p class="text-color2">We are excellence in developing web solutions for companies.</p>
+                </div>
+            </div>
+
+            <div class="ins-text2">
+                <i class="far fa-gem"></i>
+                <div>
+                    <h2 class="text-color3">Innovation</h2> <br>
+                <p class="text-color2">We seek to build something that changes people's lives.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Facts -->
+    <div class="facts">
+        <div class="facts-header">
+            <h1 class="text-color3">Fun Facts</h1>
+            <p class="text-color2">Over the years we have done many things that we are proud of. This motivates us to continue looking for new challenges in order to improve our services.</p>
+        </div>
+        <div class="fact">
+        <h3 class="fact1 factss">
+            <span id="span1" class="text-color1">0</span> <br> <p class="text-color3">Great Projects</p>
+        </h3>
+        <h3 class="fact2 factss">
+            <span id="span2" class="text-color1">128</span> <br> <p class="text-color3">Innovations</p>
+        </h3>
+        <h3 class="fact3 factss">
+            <span id="span3" class="text-color1">745</span> <br> <p class="text-color3">Cups of Coffee</p>
+        </h3>
+        <h3 class="fact4 factss">
+            <span id="span4" class="text-color1">691</span> <br> <p class="text-color3">Happy Customers</p>
+        </h3>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services">
+        <div class="services-header">
+            <div class="ser-left">
+                <h1 class="head">Our Services</h1>
+                <p class="text-color2">Focused on results we seek to raise the level of our customers.
+                </p>
+            </div>
+            <div class="ser-right">
+                <button>VIEW ALL</button>
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+
+            <div class="ser1">
+                <i class="fas fa-globe" style="color:  rgb(255, 72, 0);font-size: 40px;padding-bottom:10px ;"></i> <br>
+                <h1 class="text-color3">Website Pro</h1>
+                <p class="text-color2">We build professional responsive websites optimized for the most popular search engines.</p>
+                <i class="fas fa-arrow-right" style="color:rgb(121, 118, 118); border:solid 2px rgb(121, 118, 118); border-radius: 50%;padding: 5px;margin-top:10px ;"></i>
+            </div>
+        </div>
+
+    </div>
+    <script src="./vazifa2 js.js"></script>
+</body>
+</html>
